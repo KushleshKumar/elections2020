@@ -6,7 +6,9 @@
 
 **See Live:** https://election-results-2020.netlify.app/
 
-![](election.gif)
+![demo image](election2020.png)
+
+![demo gif](election.gif)
 
 Charting Tool: D3JS, Observable HQ  
 Data Source: https://github.com/tonmcg/US_County_Level_Election_Results_08-20     
