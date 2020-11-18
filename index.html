@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title> US Election 2020 (Embedded Observable notebook)</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    
+    <style>
+      body {
+        margin: 0px;
+        background: #fff;
+        color: #000;
+        /* font-family: 'Press Start 2P', cursive; */
+        font-family: 'Merriweather Sans', sans-serif;
+        line-height: 1.2;
+        display: flex;
+        flex-direction: column;
+        align-items: top;
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+      }
+      .wrapper {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0%;
+        /* margin:  auto; */
+        align-items: top;
+        /* height: 100%; */
+        width: 75%;
+      }
+      @media only screen and (max-device-width: 480px) {
+      .wrapper {
+        margin-top: 10%;
+        /* margin:  auto; */
+        align-items: top;
+        width: 100%;
+        /* position: absolute;   */
+/* REMOVING THE position above made the differene with respect to mobile screen-- bottom touching botton screen */
+      }
+
+      .bottom {
+        font-family: 'Quicksand', sans-serif;
+        position: absolute;
+
+        /* position:absolute; */
+        bottom:1px;       
+        /* margin: auto; */
+      }
+
+            /* .data {
+              float: left;  
+              font-size: 12px;
+              font-weight: 100;
+              position: absolute;
+              bottom: 1%;
+            }
+
+            .follow {
+              float: right; 
+              font-size: 12px;
+              font-weight: 100;
+              position: absolute;
+              bottom: 1%;
+            } */
+
+
+      }
+
+      .title {
+        font-size: 28px;
+        color:black;
+        margin-bottom: 5px;
+        letter-spacing: 0px;
+        /* margin-top: 10px; */
+      }
+      #game {
+        /* min-height: 550px; */
+        min-height: auto;
+        margin:auto;
+        /* margin: 10px auto 1px; */
+      }
+      .center {
+        float: center;
+
+      }
+      .left {
+        float: left;
+
+      }
+      .right {
+        float: right;
+      }
+      .score {
+        /* float: right; */
+        overflow: hidden;
+        font-family: 'Quicksand', sans-serif;
+        margin: auto;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 100;
+        color: gray;
+        /* max-width: 700px; */
+      }
+      #newgame input {
+        color: #000;
+        background: #fff;
+        cursor: pointer;
+        border: 2px solid #fff;
+        border-radius: 10px;
+        padding: 10px 15px;
+        font: 15px 'Press Start 2P', cursive;
+        outline: none;
+      }
+
+      .bottom {
+        font-family: 'Quicksand', sans-serif;
+        color: gray;
+        position: relative;
+        /* position:absolute; */
+        bottom:1%;
+        /* left:1%; */
+        /* margin: auto; */
+      }
+
+      .data {
+        float: left;  
+        font-size: 12px;
+        font-weight: 100;
+      }
+
+      .follow {
+        float: right; 
+        /* position: relative;  */
+        font-size: 12px;
+        /* font-weight: 100; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title">US Elections 2020: County-Wise Results</div>
+      <div class="score">
+        <div class="center"><span id="score">
+          Click on a State to Zoom <span>&#8226;</span>
+          Hover on Spike for Detail  <span>&#8226;</span>
+          Blue Spikes <span>&rarr;</span> Biden Won <span>&#8226;</span>
+          Red Spikes <span>&rarr;</span> Trump Won <span>&#8226;</span>
+          Spike Length <span>&rarr;</span> Total County Votes
+          
+        </span></div>
+        <div class="left">
+
+          <!-- Height of the Spike: Total Votes in the County -->
+          <span id="highscore"></span></div>
+              <!-- <ul>
+                <li>Blue Spike: Where Biden won</li>
+                <li>Red Spikes: Where Trump Won</li>
+                <li>Spike Length: Total votes in the County</li>
+              </ul> -->
+      </div>
+
+
+      <div id="game"></div>
+      <div id="newgame"></div>
+
+      <!-- <div class="explanation">
+        <div class="left">
+            <span id="left">
+              Data Source: https://github.com/tonmcg/US_County_Level_Election_Results_08-20
+              Data for Alaska unavailable due to inconsistencies with 'fips id'
+           </span>
+        </div>
+      </div> -->
+
+
+      <div class="bottom">
+        <!-- Follow me  -->
+                <div class="data">
+                  Data Source: https://github.com/tonmcg/US_County_Level_Election_Results_08-20
+                  (Data for Alaska unavailable due to inconsistencies with 'fips id')
+                </div>
+         
+              <div class="follow">
+                <a href="https://twitter.com/kush_iitb?ref_src=twsrc%5Etfw" 
+                class="twitter-follow-button" data-show-count="false">Follow @kush_iitb
+                </a>
+              </div>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
+        
+        
+        <!-- <a href="https://beta.observablehq.com/@jashkenas/downloading-and-embedding-notebooks"> 
+          <i class="fab fa-twitter"></i>
+        </a>   
+         
+         <a href="https://beta.observablehq.com/@jashkenas/breakout">
+          <i class="fab fa-github"></i>
+          </a> -->
+      </div>
+    </div>
+
+    <script type="module">
+      import {Runtime} from "https://unpkg.com/@observablehq/runtime@4/dist/runtime.js";
+      import notebook from "https://api.observablehq.com/d/25fff22c433b8eb2.js?v=3";
+      const renders = {
+        "chart": "#game",
+        "score": "#score",
+        "highscore": "#highscore",
+        "viewof newgame": "#newgame"
+      };
+      function render(_node, value) {
+        if (!(value instanceof Element)) {
+          const el = document.createElement("span");
+          el.innerHTML = value;
+          value = el;
+        }
+        if (_node.firstChild !== value) {
+          if (_node.firstChild) {
+            while (_node.lastChild !== _node.firstChild) _node.removeChild(_node.lastChild);
+            _node.replaceChild(value, _node.firstChild);
+          } else {
+            _node.appendChild(value);
+          }
+        }
+      }
+      const runtime = new Runtime();
+      const main = runtime.module(notebook, name => {
+        const selector = renders[name];
+        if (selector) {
+          return {fulfilled: (value) => render(document.querySelector(selector), value)}
+        } else {
+          return true;
+        }
+      });
+    </script>
+
+<script src="https://kit.fontawesome.com/ef299e20f7.js" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
