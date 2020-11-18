@@ -4,7 +4,7 @@
 * Interactive visualizations (zoom, hover, state level magnification)
 * Usage data source with latest voting results (auto-updates)
 
-**See Live:** 
+**See Live:** https://election-results-2020.netlify.app/
 
 
 Charting Tool: D3JS, Observable HQ  
