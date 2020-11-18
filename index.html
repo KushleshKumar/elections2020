@@ -33,7 +33,7 @@
         /* margin:  auto; */
         align-items: top;
         /* height: 100%; */
-        width: 75%;
+        width: 72%;
       }
       @media only screen and (max-device-width: 480px) {
       .wrapper {
@@ -80,7 +80,7 @@
         letter-spacing: 0px;
         /* margin-top: 10px; */
       }
-      #game {
+      #chartdiv {
         /* min-height: 550px; */
         min-height: auto;
         margin:auto;
@@ -108,23 +108,13 @@
         color: gray;
         /* max-width: 700px; */
       }
-      #newgame input {
-        color: #000;
-        background: #fff;
-        cursor: pointer;
-        border: 2px solid #fff;
-        border-radius: 10px;
-        padding: 10px 15px;
-        font: 15px 'Press Start 2P', cursive;
-        outline: none;
-      }
-
+      
       .bottom {
         font-family: 'Quicksand', sans-serif;
         color: gray;
         position: relative;
         /* position:absolute; */
-        bottom:1%;
+        /* bottom:1%; */
         /* left:1%; */
         /* margin: auto; */
       }
@@ -141,6 +131,23 @@
         font-size: 12px;
         /* font-weight: 100; */
       }
+
+      #fullscreendiv {
+        min-height: auto;
+        margin:auto;
+        /* float: left;
+        position: relative; */
+        /* float: left; */
+        /* color: #000;
+        background: #fff; */
+        /* cursor: pointer; */
+        /* border: 2px solid #fff; */
+        /* border-radius: 10px;
+        padding: 10px 15px;
+        font: 15px 'Press Start 2P', cursive; */
+        /* outline: none; */
+      }
+
     </style>
   </head>
   <body>
@@ -167,8 +174,8 @@
       </div>
 
 
-      <div id="game"></div>
-      <div id="newgame"></div>
+      <div id="chartdiv"></div>
+      <div id="fullscreendiv"></div>
 
       <!-- <div class="explanation">
         <div class="left">
@@ -191,7 +198,20 @@
                 <a href="https://twitter.com/kush_iitb?ref_src=twsrc%5Etfw" 
                 class="twitter-follow-button" data-show-count="false">Follow @kush_iitb
                 </a>
+
+                <a class="github-button" href="https://github.com/kushleshkumar/elections2020"
+                data-icon="octicon-star" aria-label="Star kushleshkumar/elections2020 on GitHub">
+                Star
+               </a>
+
               </div>
+              <!-- Place this tag where you want the button to render. -->
+            
+              <!-- facebook commenting DIV -->
+              <div class="fb-comments" data-href="https://election-results-2020.netlify.app" 
+              data-numposts="5" data-width="">
+              </div>
+
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
         
         
@@ -209,10 +229,10 @@
       import {Runtime} from "https://unpkg.com/@observablehq/runtime@4/dist/runtime.js";
       import notebook from "https://api.observablehq.com/d/25fff22c433b8eb2.js?v=3";
       const renders = {
-        "chart": "#game",
+        "chart": "#chartdiv",
         "score": "#score",
         "highscore": "#highscore",
-        "viewof newgame": "#newgame"
+        "fullscreen": "#fullscreendiv"
       };
       function render(_node, value) {
         if (!(value instanceof Element)) {
@@ -241,7 +261,14 @@
     </script>
 
 <script src="https://kit.fontawesome.com/ef299e20f7.js" crossorigin="anonymous"></script>
+<!-- GITHUB Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 
+<!-- facebookcommenting SDK -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" 
+src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=3229706143759865&autoLogAppEvents=1"
+ nonce="csOuRXcj"></script>
 
   </body>
 </html>
