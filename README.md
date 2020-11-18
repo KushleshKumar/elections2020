@@ -1,6 +1,6 @@
 # Visualizing Results for US Elections 2020
 
-* Rich country level data available
+* Rich county-level data visualized for a better overview of results
 * Interactive visualizations (zoom, hover, state level magnification)
 * Usage data source with latest voting results (auto-updates)
 
